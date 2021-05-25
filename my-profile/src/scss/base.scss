@@ -1,6 +1,6 @@
-$color-primary-light: #6fb1fc;
+$color-primary-light: #673ab7;
 $color-primary: #4364f7;
-$color-primary-dark: #0052d4;
+$color-primary-dark: #512da8;
 
 $color-grey-light-1: #faf9f9;
 $color-grey-light-2: #f4f2f2;
@@ -36,8 +36,24 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.heading-1 {
+  font-size: 4.5rem;
+  color: $color-grey-light-1;
+  font-weight: 400;
+}
+.heading-2 {
+  font-size: 2.5rem;
+  color: $color-grey-light-1;
+  font-weight: 300;
+  & span {
+    font-size: 3rem;
+    font-weight: 400;
+  }
 }
