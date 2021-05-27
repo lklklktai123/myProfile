@@ -1,28 +1,20 @@
 .about {
-  padding: 15rem 0;
-  grid-column: 1/-1;
+  grid-column: center-start/center-end;
   display: grid;
   text-align: center;
+  grid-template-rows: min-content min-content min-content min-content;
+  grid-template-columns: 1fr 1fr;
 
-  .heading-3 {
-    grid-column: center-start / center-end;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: inline-block;
-    background-image: linear-gradient(
-      to right,
-      $color-primary-light,
-      $color-primary-dark
-    );
-    -webkit-background-clip: text;
-    color: transparent;
-    // letter-spacing: 0.2rem;
-    transition: all 0.2s;
-    text-align: center;
-    &:hover {
-      transform: skewY(2deg) skewX(15deg) scale(1.1);
-      text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
-    }
+  .heading-4 {
+    grid-column: 1/-1;
+    font-size: 3rem;
+    color: $color-grey-dark-1;
+  }
+
+  &__avartar {
+    grid-column: 1/2;
+  }
+  &__content {
+    grid-column: 2/3;
   }
 }
