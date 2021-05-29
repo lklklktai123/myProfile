@@ -1,0 +1,23 @@
+.experience {
+  grid-column: center-start/center-end;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+
+  &__timeline {
+    grid-column: 1/-1;
+    height: 40rem;
+    border: 1px solid black;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(min-content, 1fr));
+  }
+  &__timeline::before {
+    width: 0.4rem;
+    height: 100%;
+    background: $color-grey-light-4;
+    position: absolute;
+    left: 1.8rem;
+    content: '';
+  }
+}

@@ -1,7 +1,7 @@
-const headingTitle = () => {
+const headingTitle = props => {
   return (
     <div className="heading-3">
-      <h3>About</h3>
+      <h3>{props.title}</h3>
     </div>
   );
 };
