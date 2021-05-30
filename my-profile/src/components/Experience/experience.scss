@@ -1,23 +1,38 @@
 .experience {
-  grid-column: center-start/center-end;
+  grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, min-content);
+  background-color: $color-grey-light-2;
 
   &__timeline {
     grid-column: 1/-1;
-    height: 40rem;
-    border: 1px solid black;
     position: relative;
     display: grid;
     grid-template-columns: repeat(9, minmax(min-content, 1fr));
-  }
-  &__timeline::before {
-    width: 0.4rem;
-    height: 100%;
-    background: $color-grey-light-4;
-    position: absolute;
-    left: 1.8rem;
-    content: '';
+    justify-items: center;
+    padding: 6rem 0;
+    &-line {
+      grid-column: 5/6;
+      grid-row: 1/-1;
+      width: 0.4rem;
+      background: $color-grey-light-4;
+    }
+    &-content {
+      grid-column: 2/5;
+      color: $color-grey-dark-2;
+      background: $color-white;
+      padding: 2rem 1rem;
+      border-radius: 2px;
+      box-shadow: $shadow-light;
+      margin-top: 5rem;
+      .project-title {
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      .position-title {
+        margin-bottom: 1.5rem;
+      }
+    }
   }
 }
