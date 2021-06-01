@@ -1,0 +1,21 @@
+.courses {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-row: 1fr;
+  grid-column: repeat(3, min-content);
+  &__block {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+  }
+  &__child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.5rem;
+  }
+  &__image {
+    width: 100%;
+    grid-column: 1/-1;
+  }
+}

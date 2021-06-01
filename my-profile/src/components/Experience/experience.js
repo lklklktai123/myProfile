@@ -4,9 +4,7 @@ const experience = () => {
   return (
     <section className="experience">
       <HeadingTitle title="EXPERIENCE" />
-      <h4 className="heading-4">
-        Hay de toi gioi thieu mot so trai nghiem ve ban than minh
-      </h4>
+      <h4 className="heading-4">Some real experiences</h4>
       <div className="experience__timeline">
         <Timeline
           projectTitle="Envato Ltd."

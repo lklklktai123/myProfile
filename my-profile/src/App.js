@@ -1,4 +1,5 @@
 import About from './components/About/about';
+import Courses from './components/Courses/Courses';
 import Education from './components/Education/Education';
 import Experience from './components/Experience/experience';
 import Header from './components/Header/header';
@@ -11,6 +12,7 @@ function App() {
       <Parallax />
       <Experience />
       <Education />
+      <Courses />
     </div>
   );
 }

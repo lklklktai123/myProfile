@@ -4,9 +4,7 @@ const education = () => {
   return (
     <section className="education">
       <HeadingTitle title="EDUCATION" />
-      <h4 className="heading-4">
-        Some project when studied and course online{' '}
-      </h4>
+      <h4 className="heading-4">Some projects when i was study</h4>
       <div className="education__timeline">
         <Timeline
           nameIcon="graduation"
