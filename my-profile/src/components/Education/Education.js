@@ -1,14 +1,15 @@
+import Timeline from '../Experience/TimeLine/timeline';
 import HeadingTitle from '../HeadingTitle/headingTitle';
-import Timeline from './TimeLine/timeline';
-const experience = () => {
+const education = () => {
   return (
-    <section className="experience">
-      <HeadingTitle title="EXPERIENCE" />
+    <section className="education">
+      <HeadingTitle title="EDUCATION" />
       <h4 className="heading-4">
-        Hay de toi gioi thieu mot so trai nghiem ve ban than minh
+        Some project when studied and course online{' '}
       </h4>
-      <div className="experience__timeline">
+      <div className="education__timeline">
         <Timeline
+          nameIcon="graduation"
           projectTitle="Envato Ltd."
           position="Software Engineer"
           isRight={false}
@@ -19,6 +20,7 @@ const experience = () => {
           dateTime="January 2014 - Till Now"
         />
         <Timeline
+          nameIcon="graduation"
           projectTitle="Envato Ltd."
           position="Software Engineer"
           isRight={true}
@@ -32,4 +34,4 @@ const experience = () => {
     </section>
   );
 };
-export default experience;
+export default education;
