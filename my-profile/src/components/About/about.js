@@ -6,7 +6,7 @@ import { FaDownload } from 'react-icons/fa';
 
 const about = () => {
   return (
-    <section className="about">
+    <section className="about vertical-normal">
       <HeadingTitle title="ABOUT" />
       <h4 className="heading-4">Let me introduce my self</h4>
       <div className="about__avartar">

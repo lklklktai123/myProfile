@@ -1,22 +1,47 @@
 import HeadingTitle from '../HeadingTitle/headingTitle';
-import imgCss from '../../image/css.jpg';
-import imgJs from '../../image/jonas-js.jpg';
-import imgReact from '../../image/reactjs.jpg';
+import Course from '../Courses/Course/course';
+import videoMp4 from '../../video/video.mp4';
+import videoWebm from '../../video/video.webm';
 
 const course = () => {
   return (
-    <section className="courses">
-      <HeadingTitle title="Course" />
-      <h4 className="heading-4">Some course studied</h4>
-      <div className="courses__block">
-        <div className="courses__child">
-          <img alt="css" src={imgCss} className="courses__image" />
+    <section className=" courses">
+      <div className="courses-vd-block">
+        <HeadingTitle title="Course" />
+        <h4 className="heading-4">Some course studied</h4>
+        <div className="courses-video">
+          <video className="courses-video__content" loop autoPlay>
+            <source src={videoMp4} type="video/mp4" />
+            <source src={videoWebm} type="video/webm" />
+            Your browser is not supported!
+          </video>
         </div>
-        <div className="courses__child">
-          <img alt="js" src={imgJs} className="courses__image" />
-        </div>
-        <div className="courses__child">
-          <img alt="react" src={imgReact} className="courses__image" />
+
+        <div className="courses__block">
+          <Course
+            image={2}
+            title="Java Script"
+            address="Udemy.com"
+            teacher="Jonas Schedtmann"
+            hours="68.5 total h"
+            rating="4.7(106,321)"
+          />
+          <Course
+            image={1}
+            title="Css3 & Html5"
+            address="Udemy.com"
+            teacher="Jonas Schedtmann"
+            hours="28 total h"
+            rating="4.8(30,365)"
+          />
+          <Course
+            image={3}
+            title="ReactJs"
+            address="Udemy.com"
+            teacher="Maximilian"
+            hours="48 total h"
+            rating="4.6(113,895)"
+          />
         </div>
       </div>
     </section>
