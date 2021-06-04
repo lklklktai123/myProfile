@@ -1,7 +1,7 @@
 import HeadingTitle from '../HeadingTitle/headingTitle';
-import Address from './Address/Address';
-
-const contact = () => {
+import Address from '../../components/Contact/Address/address';
+import Form from './Form/form';
+const Contact = () => {
   return (
     <section className="contact vertical-normal">
       <HeadingTitle title="Contact" />
@@ -10,9 +10,9 @@ const contact = () => {
       </h4>
       <div className="contact__container">
         <Address />
-        <div className="contact__container-form">Form</div>
+        <Form />
       </div>
     </section>
   );
 };
-export default contact;
+export default Contact;

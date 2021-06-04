@@ -1,4 +1,3 @@
-@import './Address/address.scss';
 .contact {
   grid-column: center-start/center-end;
   display: grid;
@@ -8,8 +7,7 @@
     grid-template-columns: 1fr 2fr;
     grid-column-gap: 3rem;
     margin-top: 5rem;
-    &-form {
-      grid-column: 2/3;
-    }
+    @import './Address/address.scss';
+    @import './Form/form.scss';
   }
 }
