@@ -1,4 +1,5 @@
 import About from './components/About/about';
+import Contact from './components/Contact/contact';
 import Courses from './components/Courses/Courses';
 import Education from './components/Education/Education';
 import Experience from './components/Experience/experience';
@@ -13,6 +14,7 @@ function App() {
       <Experience />
       <Education />
       <Courses />
+      <Contact />
     </div>
   );
 }
