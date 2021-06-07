@@ -1,0 +1,28 @@
+.education {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  background-color: $color-grey-light-1;
+  grid-row-gap: 3.5rem;
+
+  &__timeline {
+    grid-column: 1/-1;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(11, minmax(min-content, 1fr));
+    grid-template-rows: repeat(2, min-content);
+    padding: 4rem 0;
+    position: relative;
+    grid-row-gap: 5rem;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0.4rem;
+      height: 100%;
+      background-color: $color-grey-light-4;
+      grid-column: 6/7;
+      justify-self: center;
+    }
+  }
+}

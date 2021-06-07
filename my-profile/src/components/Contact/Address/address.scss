@@ -1,0 +1,22 @@
+&-address {
+  padding: 2rem;
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  border-radius: 2px;
+  &:hover {
+    box-shadow: $shadow-dark-1;
+  }
+  .address__icon {
+    font-size: 5rem;
+    color: rgba($color-black-1, 0.75);
+    font-weight: 300;
+  }
+  .address__title {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
