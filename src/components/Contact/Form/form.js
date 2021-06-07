@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import config from '../../../Config/config';
-
+import ReCAPTCHA from 'react-google-recaptcha';
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const sendEmail = e => {
+  const sendEmail = (e, value) => {
     e.preventDefault();
-    emailjs
-      .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
-      .then(
-        result => {
-          alert('Email Sent Successfully!');
-          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
-        },
-        error => {
-          console.log(error.text);
-          alert('Something went wrong!');
-        }
-      );
+    console.log(value);
+
+    // emailjs
+    // .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
+    // .then(
+    //   result => {
+    //     alert('Email Sent Successfully!');
+    //     window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+    //   },
+    //   error => {
+    //     console.log(error.text);
+    //     alert('Something went wrong!');
+    //   }
+    // );
   };
   return (
     <form className="contact__container-form" onSubmit={sendEmail}>
@@ -67,6 +69,7 @@ const Form = () => {
         rows="7"
         name="message"
       />
+      <ReCAPTCHA sitekey={config.SITE_KEY} />
       <button type="submit" className="btn-submit">
         Submit
       </button>
