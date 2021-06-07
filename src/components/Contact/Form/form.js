@@ -7,22 +7,24 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const sendEmail = (e, value) => {
+  const onchange = value => {
+    console.log('Captcha value:', value);
+  };
+  const sendEmail = e => {
     e.preventDefault();
-    console.log(value);
 
-    // emailjs
-    // .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
-    // .then(
-    //   result => {
-    //     alert('Email Sent Successfully!');
-    //     window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
-    //   },
-    //   error => {
-    //     console.log(error.text);
-    //     alert('Something went wrong!');
-    //   }
-    // );
+    emailjs
+      .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
+      .then(
+        result => {
+          alert('Email Sent Successfully!');
+          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+        },
+        error => {
+          console.log(error.text);
+          alert('Something went wrong!');
+        }
+      );
   };
   return (
     <form className="contact__container-form" onSubmit={sendEmail}>
@@ -69,7 +71,7 @@ const Form = () => {
         rows="7"
         name="message"
       />
-      <ReCAPTCHA sitekey={config.SITE_KEY} />
+      <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} />
       <button type="submit" className="btn-submit">
         Submit
       </button>
