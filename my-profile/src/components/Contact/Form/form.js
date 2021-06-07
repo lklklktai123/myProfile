@@ -1,12 +1,29 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import config from '../../../Config/config';
 
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const sendEmail = e => {
+    e.preventDefault();
+    emailjs
+      .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
+      .then(
+        result => {
+          alert('Email Sent Successfully!');
+          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+        },
+        error => {
+          console.log(error.text);
+          alert('Something went wrong!');
+        }
+      );
+  };
   return (
-    <form className="contact__container-form">
+    <form className="contact__container-form" onSubmit={sendEmail}>
       <input
         value={name}
         type="text"
@@ -17,12 +34,17 @@ const Form = () => {
         onChange={e => setName(e.target.value)}
       />
       <input
+        type="hidden"
+        value="thanhtailk96@gmail.com"
+        name="to_name"
+      ></input>
+      <input
         value={email}
         type="email"
         placeholder="Email"
         className="input-mail"
         required
-        name="email"
+        name="from_name"
         onChange={e => setEmail(e.target.value)}
       />
       <input
@@ -43,6 +65,7 @@ const Form = () => {
         className="input-message normal-text"
         onChange={e => setMessage(e.target.value)}
         rows="7"
+        name="message"
       />
       <button type="submit" className="btn-submit">
         Submit
