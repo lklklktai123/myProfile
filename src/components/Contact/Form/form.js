@@ -21,7 +21,8 @@ const Form = () => {
           window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
         },
         error => {
-          console.log(error.text);
+          console.log(error);
+          console.log(error.message);
           alert('Something went wrong!');
         }
       );
