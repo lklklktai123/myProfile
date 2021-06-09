@@ -21,9 +21,7 @@ const Form = () => {
           window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
         },
         error => {
-          console.log(error);
-          console.log(error.message);
-          alert('Something went wrong!');
+          alert(error);
         }
       );
   };
@@ -72,7 +70,7 @@ const Form = () => {
         rows="7"
         name="message"
       />
-      <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} />
+      {/* <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} /> */}
       <button type="submit" className="btn-submit">
         Submit
       </button>

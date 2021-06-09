@@ -1,7 +1,7 @@
 &-form {
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: minmax(min-content, 1fr);
   grid-template-rows: repeat(5, min-content);
   padding: 2rem;
   grid-gap: 2rem;
@@ -42,6 +42,7 @@
     border-radius: 5px;
     justify-self: start;
     transition: all 0.3s;
+    grid-column: 1/-1;
     &:hover {
       background-color: $color-primary-dark;
       transform: translateY(-0.5rem);

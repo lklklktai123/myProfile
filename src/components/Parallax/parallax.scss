@@ -1,8 +1,14 @@
 .parallax {
   grid-column: 1/-1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
+  grid-template-rows: min-content;
+  justify-items: center;
+  align-content: center;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.7),
@@ -11,6 +17,11 @@
     url('../../image/parallax-3.jpg');
   background-attachment: fixed;
   background-size: cover;
+  &__container {
+    grid-column: center-start/center-end;
+    display: flex;
+  }
+
   &__title {
     font-size: 2rem;
     font-weight: 400;
@@ -25,6 +36,7 @@
     transition: all 0.2s;
     border-radius: 2px;
     background: none;
+    justify-self: start;
     &:hover {
       background-color: $color-grey-light-1;
       color: $color-primary-dark;

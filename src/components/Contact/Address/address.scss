@@ -1,9 +1,9 @@
 &-address {
   padding: 2rem;
   grid-column: 1/2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: 1fr;
   text-align: center;
   transition: box-shadow 0.2s;
   border-radius: 2px;
@@ -14,9 +14,14 @@
     font-size: 5rem;
     color: rgba($color-black-1, 0.75);
     font-weight: 300;
+    grid-column: 1/-1;
+    justify-self: center;
   }
   .address__title {
     font-size: 2rem;
     font-weight: 400;
+  }
+  .address__text {
+    align-self: end;
   }
 }
