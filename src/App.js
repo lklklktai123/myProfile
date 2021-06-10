@@ -6,18 +6,24 @@ import Experience from './components/Experience/experience';
 import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
 import Parallax from './components/Parallax/parallax';
+import Overlay from './components/Overlay/overlay';
+import React from 'react';
+
 function App() {
   return (
-    <div className="container">
-      <Header />
-      <About />
-      <Parallax />
-      <Experience />
-      <Education />
-      <Courses />
-      <Contact />
-      <Footer />
-    </div>
+    <React.Fragment>
+      <Overlay />
+      <div className="container">
+        <Header />
+        <About />
+        <Parallax />
+        <Experience />
+        <Education />
+        <Courses />
+        <Contact />
+        <Footer />
+      </div>
+    </React.Fragment>
   );
 }
 

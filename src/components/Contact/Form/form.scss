@@ -1,7 +1,7 @@
 &-form {
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: minmax(min-content, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(5, min-content);
   padding: 2rem;
   grid-gap: 2rem;
@@ -17,9 +17,20 @@
       }
     }
   }
-  .input-subject,
+  .input-name {
+    grid-column: 1/2;
+  }
+  .input-mail {
+    grid-column: 2/3;
+  }
+
   .input-message {
     grid-column: 1/-1;
+    grid-row: 3/4;
+  }
+  .input-subject {
+    grid-column: 1/-1;
+    grid-row: 2/3;
   }
   .input-message {
     padding: 1rem;

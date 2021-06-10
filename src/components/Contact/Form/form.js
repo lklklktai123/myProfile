@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import emailjs from 'emailjs-com';
 import config from '../../../Config/config';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { ErrorContext } from '../../../Context/error-context';
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const errCtx = useContext(ErrorContext);
+  const overlay = document.querySelector('.overlay');
   const onchange = value => {
     console.log('Captcha value:', value);
   };
@@ -17,11 +20,13 @@ const Form = () => {
       .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
       .then(
         result => {
-          alert('Email Sent Successfully!');
-          window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
+          errCtx.onError(false);
+          overlay.classList.remove('hidden');
         },
         error => {
-          alert(error);
+          errCtx.onError(true);
+          overlay.classList.remove('hidden');
+          console.log(error.text);
         }
       );
   };
@@ -70,7 +75,7 @@ const Form = () => {
         rows="7"
         name="message"
       />
-      {/* <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} /> */}
+      <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} />
       <button type="submit" className="btn-submit">
         Submit
       </button>

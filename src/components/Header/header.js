@@ -1,9 +1,5 @@
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaGooglePlusG,
-  FaInstagram,
-} from 'react-icons/fa';
+import Icons from './Icons/Icons';
+
 const header = () => {
   return (
     <header className="header">
@@ -15,20 +11,10 @@ const header = () => {
             I am a <span>Front End Developer</span>
           </h2>
         </div>
-        <div className="header__container-btn">
-          <a href="/#" className="btn__link">
-            <FaFacebookF className="btn__link-icon" />
-          </a>
-          <a href="/#" className="btn__link">
-            <FaTwitter className="btn__link-icon" />
-          </a>
-          <a href="/#" className="btn__link">
-            <FaGooglePlusG className="btn__link-icon" />
-          </a>
-          <a href="/#" className="btn__link">
-            <FaInstagram className="btn__link-icon" />
-          </a>
+        <div className="header__container-btn move-in-bottom">
+          <Icons />
         </div>
+
         <button className="btn-detail">Detail</button>
       </div>
     </header>

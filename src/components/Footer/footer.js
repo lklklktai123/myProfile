@@ -1,4 +1,5 @@
 import images from '../../image/exportImage';
+import Icons from '../Header/Icons/Icons';
 
 const footer = () => {
   return (
@@ -11,6 +12,9 @@ const footer = () => {
         your own.
       </p>
       <p className="footer__coppyright"></p>
+      <div className="header__container-btn">
+        <Icons />
+      </div>
     </footer>
   );
 };
