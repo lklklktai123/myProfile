@@ -1,3 +1,5 @@
+import React from 'react';
+
 import About from './components/About/about';
 import Contact from './components/Contact/contact';
 import Courses from './components/Courses/Courses';
@@ -7,12 +9,13 @@ import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
 import Parallax from './components/Parallax/parallax';
 import Overlay from './components/Overlay/overlay';
-import React from 'react';
+import Navigation from './components/Navigation/navigation';
 
 function App() {
   return (
     <React.Fragment>
       <Overlay />
+      <Navigation />
       <div className="container">
         <Header />
         <About />
