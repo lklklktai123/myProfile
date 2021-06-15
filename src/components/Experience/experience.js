@@ -2,7 +2,7 @@ import HeadingTitle from '../HeadingTitle/headingTitle';
 import Timeline from './TimeLine/timeline';
 const experience = () => {
   return (
-    <section className="experience vertical-normal">
+    <section className="experience vertical-normal" id="experience">
       <HeadingTitle title="EXPERIENCE" />
       <h4 className="heading-4">Some real experiences</h4>
       <div className="experience__timeline">

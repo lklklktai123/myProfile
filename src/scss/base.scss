@@ -107,6 +107,9 @@ code {
 .hidden {
   display: none !important;
 }
+.border-bottom {
+  border-bottom: 2px solid $color-primary-dark !important;
+}
 .vertical-top-small {
   margin-top: 5rem;
 }
@@ -121,6 +124,27 @@ code {
 /*Animation */
 .move-in-bottom {
   animation: moveInBottom 0.5s ease-out 0.75s;
+}
+.move-in-left {
+  animation: moveInLeft 1s ease-out;
+}
+.move-in-top {
+  animation: moveInTop 1s ease-out 0.75s;
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 @keyframes moveInBottom {
   0% {
@@ -142,5 +166,20 @@ code {
   100% {
     opacity: 1;
     transform: translate(-50%, -50%);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  80% {
+    opacity: 0.75;
+    transform: translateY(-2rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }

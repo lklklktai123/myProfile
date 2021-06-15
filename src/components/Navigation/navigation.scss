@@ -9,34 +9,6 @@
   display: grid;
   grid-template-columns: 2fr 8fr;
   grid-template-rows: min-content;
-  &__logo {
-    width: 7rem;
-    padding: 1rem 0;
-    justify-self: center;
-    grid-column: 1 / 2;
-  }
-  &__nav-bar {
-    justify-self: center;
-    align-self: center;
-    grid-column: 2/3;
-    padding: 0 2rem;
-    font-size: 1.5rem;
-    list-style: none;
-    display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-    grid-template-rows: min-content;
-    grid-column-gap: 5rem;
-    & li {
-      display: inline-block;
-    }
-    a {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: inherit;
-      transition: all 0.2s;
-      &:hover {
-        color: $color-primary;
-      }
-    }
-  }
+  @import './Logo/Logo.scss';
+  @import './Menus/Menus.scss';
 }

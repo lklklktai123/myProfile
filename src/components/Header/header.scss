@@ -23,14 +23,12 @@
     transform: translate(-50%, -50%);
     text-align: center;
     &-text {
-      animation: moveInLeft 1s ease-out;
     }
     .btn-detail {
       border-radius: 10rem;
       margin-top: 10rem;
       border: none;
       padding: 1rem 10rem;
-      animation: moveInTop 1s ease-out 0.75s;
       animation-fill-mode: backwards;
       transition: transform 0.2s;
       text-transform: uppercase;
@@ -42,34 +40,4 @@
   }
 }
 
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  80% {
-    transform: translateX(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
 @import './Icons/Icon.scss';
-@keyframes moveInTop {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-  80% {
-    opacity: 0.75;
-    transform: translateY(-2rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}

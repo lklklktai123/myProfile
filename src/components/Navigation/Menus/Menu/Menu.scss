@@ -1,0 +1,13 @@
+& li {
+  display: inline-block;
+  padding-bottom: 0.7rem 0;
+}
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
+  transition: all 0.2s;
+  &:hover {
+    color: $color-primary;
+  }
+}

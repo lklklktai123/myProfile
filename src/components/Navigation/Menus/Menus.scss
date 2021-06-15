@@ -1,0 +1,13 @@
+&__nav-bar {
+  justify-self: center;
+  align-self: center;
+  grid-column: 2/3;
+  padding: 0 2rem;
+  font-size: 1.5rem;
+  list-style: none;
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-rows: min-content;
+  grid-column-gap: 5rem;
+  @import './Menu/Menu.scss';
+}

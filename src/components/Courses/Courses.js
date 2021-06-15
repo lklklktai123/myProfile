@@ -5,7 +5,7 @@ import videoWebm from '../../video/video.webm';
 
 const course = () => {
   return (
-    <section className=" courses">
+    <section className=" courses" id="course">
       <div className="courses-vd-block">
         <HeadingTitle title="Course" />
         <h4 className="heading-4">Some course studied</h4>

@@ -1,29 +1,44 @@
-import images from '../../image/exportImage';
-const navigation = () => {
+import Logo from './Logo/Logo';
+import Menu from './Menus/Menus';
+import React, { useEffect } from 'react';
+const Navigation = () => {
+  useEffect(() => {
+    const header = document.querySelector('.header');
+    const navigation = document.querySelector('.navigation');
+    const allSections = document.querySelectorAll('section');
+    const stickyNav = entries => {
+      const [entry] = entries;
+      if (!entry.isIntersecting) {
+        navigation.classList.remove('hidden');
+      } else {
+        navigation.classList.add('hidden');
+      }
+    };
+    const headerObserver = new IntersectionObserver(stickyNav, {
+      root: null,
+      threshold: 0.9,
+    });
+    headerObserver.observe(header);
+
+    const sectionObserver = new IntersectionObserver(revealSection, {
+      root: null,
+      threshold: 0.3,
+    });
+    allSections.forEach(function (section) {
+      sectionObserver.observe(section);
+    });
+  }, []);
+  const revealSection = function (entries, observer) {
+    const [entry] = entries;
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('move-in-left');
+    observer.unobserve(entry.target);
+  };
   return (
     <div className="navigation hidden">
-      <img src={images.logo} alt="logo" className="navigation__logo" />
-      <ul className="navigation__nav-bar">
-        <li>
-          <a href="#id">Home</a>
-        </li>
-        <li>
-          <a href="#id">About</a>
-        </li>
-        <li>
-          <a href="#id">EXPERIENCE</a>
-        </li>
-        <li>
-          <a href="#id">EDUCATION</a>
-        </li>
-        <li>
-          <a href="#id">COURSE</a>
-        </li>
-        <li>
-          <a href="#id">contact</a>
-        </li>
-      </ul>
+      <Logo />
+      <Menu />
     </div>
   );
 };
-export default navigation;
+export default Navigation;

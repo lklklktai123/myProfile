@@ -2,9 +2,9 @@ import Icons from './Icons/Icons';
 
 const header = () => {
   return (
-    <header className="header">
+    <header className="header" id="home">
       <div className="header__container">
-        <div className="header__container-text">
+        <div className="header__container-text move-in-left">
           <h2 className="heading-2">Hi,I am</h2>
           <h1 className="heading-1">Phan Nguyễn Thành Tài</h1>
           <h2 className="heading-2">
@@ -15,7 +15,7 @@ const header = () => {
           <Icons />
         </div>
 
-        <button className="btn-detail">Detail</button>
+        <button className="btn-detail move-in-top">Detail</button>
       </div>
     </header>
   );
