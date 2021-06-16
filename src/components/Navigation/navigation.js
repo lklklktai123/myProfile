@@ -6,10 +6,14 @@ const Navigation = () => {
     const header = document.querySelector('.header');
     const navigation = document.querySelector('.navigation');
     const allSections = document.querySelectorAll('section');
+    const navBar = document.querySelector('.navigation__nav-bar');
+    const menuHome = document.querySelector('#menu-home');
+
     const stickyNav = entries => {
       const [entry] = entries;
       if (!entry.isIntersecting) {
         navigation.classList.remove('hidden');
+        menuHome.classList.add('border-bottom');
       } else {
         navigation.classList.add('hidden');
       }
@@ -18,22 +22,28 @@ const Navigation = () => {
       root: null,
       threshold: 0.9,
     });
+    const revealSection = function (entries, observer) {
+      const [entry] = entries;
+      if (!entry.isIntersecting) return;
+      const menuId = document.querySelector(`#${entry.target.dataset.idMenu}`);
+      const childBar = navBar.childNodes;
+      childBar.forEach(menu => menu.classList.remove('border-bottom'));
+      entry.target.classList.remove('blur');
+      menuId.classList.add('border-bottom');
+
+      // observer.unobserve(entry.target);
+    };
     headerObserver.observe(header);
 
     const sectionObserver = new IntersectionObserver(revealSection, {
       root: null,
-      threshold: 0.3,
+      threshold: 0.2,
     });
     allSections.forEach(function (section) {
       sectionObserver.observe(section);
     });
   }, []);
-  const revealSection = function (entries, observer) {
-    const [entry] = entries;
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('move-in-left');
-    observer.unobserve(entry.target);
-  };
+
   return (
     <div className="navigation hidden">
       <Logo />

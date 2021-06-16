@@ -2,7 +2,11 @@ import Timeline from '../Experience/TimeLine/timeline';
 import HeadingTitle from '../HeadingTitle/headingTitle';
 const education = () => {
   return (
-    <section className="education vertical-normal" id="education">
+    <section
+      className="education vertical-normal blur"
+      id="education"
+      data-id-menu="menu-education"
+    >
       <HeadingTitle title="EDUCATION" />
       <h4 className="heading-4">Some projects when i was study</h4>
       <div className="education__timeline">

@@ -104,6 +104,9 @@ code {
   color: $color-grey-dark-1;
   font-weight: 700;
 }
+section {
+  transition: all 0.2s;
+}
 .hidden {
   display: none !important;
 }

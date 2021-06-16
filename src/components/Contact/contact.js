@@ -3,7 +3,11 @@ import Address from '../../components/Contact/Address/address';
 import Form from './Form/form';
 const Contact = () => {
   return (
-    <section className="contact vertical-normal" id="contact">
+    <section
+      className="contact vertical-normal blur"
+      id="contact"
+      data-id-menu="menu-contact"
+    >
       <HeadingTitle title="Contact" />
       <h4 className="heading-4">
         Please contact me if you any question or more informations
