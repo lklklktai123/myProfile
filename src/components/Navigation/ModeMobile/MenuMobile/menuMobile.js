@@ -1,34 +1,33 @@
-const menuMobile = () => {
+import { ErrorContext } from '../../../../Context/error-context';
+import { useContext } from 'react';
+import { dataMenu } from '../../../../shared/utilities/config';
+import { ScrollToHandler } from '../../../../shared/utilities/helper';
+
+const MenuMobile = () => {
+  const errCtx = useContext(ErrorContext);
+  const handlerScrollTo = e => {
+    document.getElementById('navi-toggle').checked = false;
+    errCtx.toggleIcon(true);
+    console.log(errCtx.statusIcon);
+    ScrollToHandler(e);
+  };
+  const listMenu = dataMenu.map((menu, index) => (
+    <li
+      className="mode-mobile__item"
+      id={menu.idMenu}
+      key={`menu${index}`}
+      onClick={e => handlerScrollTo(e)}
+    >
+      <a href={`#${menu.link}`} className="mode-mobile__link">
+        <span>0{index + 1}</span>
+        {menu.name}
+      </a>
+    </li>
+  ));
   return (
     <nav className="mode-mobile__nav">
-      <ul className="mode-mobile__list">
-        <li className="mode-mobile__item">
-          <a href="/#" className="mode-mobile__link">
-            <span>01</span>About Natous
-          </a>
-        </li>
-        <li className="mode-mobile__item">
-          <a href="/#" className="mode-mobile__link">
-            <span>02</span>Your benfits
-          </a>
-        </li>
-        <li className="mode-mobile__item">
-          <a href="/#" className="mode-mobile__link">
-            <span>03</span>Popular tours
-          </a>
-        </li>
-        <li className="mode-mobile__item">
-          <a href="/#" className="mode-mobile__link">
-            <span>04</span>Stories
-          </a>
-        </li>
-        <li className="mode-mobile__item">
-          <a href="/#" className="mode-mobile__link">
-            <span>05</span>Book now
-          </a>
-        </li>
-      </ul>
+      <ul className="mode-mobile__list">{listMenu}</ul>
     </nav>
   );
 };
-export default menuMobile;
+export default MenuMobile;

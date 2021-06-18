@@ -1,12 +1,10 @@
 import MenuMobile from './MenuMobile/menuMobile';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import IconMenu from './MenuMobile/IconMenu/iconMenu';
-const ModeMobile = () => {
-  const [toggleIcon, setToggleIcon] = useState(true);
+import { ErrorContext } from '../../../Context/error-context';
 
-  const toogleClick = value => {
-    setToggleIcon(!value);
-  };
+const ModeMobile = () => {
+  const errorCtx = useContext(ErrorContext);
   return (
     <div className="mode-mobile">
       <input
@@ -15,7 +13,10 @@ const ModeMobile = () => {
         id="navi-toggle"
       />
       <div className="mode-mobile__background"></div>
-      <IconMenu check={toggleIcon} clicked={() => toogleClick(toggleIcon)} />
+      <IconMenu
+        check={errorCtx.statusIcon}
+        clicked={() => errorCtx.toggleIcon(!errorCtx.statusIcon)}
+      />
       <MenuMobile />
     </div>
   );

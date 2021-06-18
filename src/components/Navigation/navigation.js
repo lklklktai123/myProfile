@@ -8,11 +8,13 @@ const Navigation = () => {
     const allSections = document.querySelectorAll('section');
     const navBar = document.querySelector('.navigation__nav-bar');
     const menuHome = document.querySelector('#menu-home');
+    const childBar = navBar.childNodes;
 
     const stickyNav = entries => {
       const [entry] = entries;
       if (!entry.isIntersecting) {
         navigation.classList.remove('hidden');
+        childBar.forEach(menu => menu.classList.remove('border-bottom'));
         menuHome.classList.add('border-bottom');
       } else {
         navigation.classList.add('hidden');
@@ -26,8 +28,9 @@ const Navigation = () => {
       const [entry] = entries;
       if (!entry.isIntersecting) return;
       const menuId = document.querySelector(`#${entry.target.dataset.idMenu}`);
-      const childBar = navBar.childNodes;
+
       childBar.forEach(menu => menu.classList.remove('border-bottom'));
+      console.log(entry.target);
       entry.target.classList.remove('blur');
       menuId.classList.add('border-bottom');
 
