@@ -10,12 +10,14 @@ import Header from './components/Header/header';
 import Parallax from './components/Parallax/parallax';
 import Overlay from './components/Overlay/overlay';
 import Navigation from './components/Navigation/navigation';
+import ModeMobile from './components/Navigation/ModeMobile/ModeMobile';
 
 function App() {
   return (
     <React.Fragment>
       <Overlay />
       <Navigation />
+      <ModeMobile />
       <div className="container">
         <Header />
         <About />

@@ -1,4 +1,6 @@
 @import './scss/base.scss';
+@import './scss/mixins.scss';
+@import '../src/components/Navigation/ModeMobile/ModeMobile.scss';
 @import './components/Overlay/overlay.scss';
 @import './components/Navigation/navigation.scss';
 @import '../src/App.scss';
