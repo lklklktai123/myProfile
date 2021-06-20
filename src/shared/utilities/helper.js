@@ -11,3 +11,8 @@ export const ScrollToHandler = e => {
 
   idSection.scrollIntoView({ behavior: 'smooth' });
 };
+export const closeModal = () => {
+  const overlay = document.querySelector('.overlay');
+  overlay.classList.add('hidden');
+  window.location.reload();
+};

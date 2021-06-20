@@ -1,3 +1,4 @@
+import React from 'react';
 import images from '../../../image/exportImage';
 import { BiMap, BiUser, BiTime, BiStar } from 'react-icons/bi';
 
@@ -36,7 +37,9 @@ const course = props => {
         <BiStar className="course__icon" />
         <span className="normal-text">{props.rating}</span>
       </div>
-      <button className="course__btn">Detail</button>
+      <button className="course__btn" onClick={props.clicked}>
+        Detail
+      </button>
     </div>
   );
 };

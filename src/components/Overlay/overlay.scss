@@ -3,8 +3,9 @@
   height: 100vh;
   position: fixed;
   background-color: rgba($color-black-1, 0.7);
-
-  z-index: 200;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 .modal {
   width: 40rem;

@@ -31,7 +31,7 @@ const Navigation = () => {
 
       childBar.forEach(menu => menu.classList.remove('border-bottom'));
       console.log(entry.target);
-      entry.target.classList.remove('blur');
+      // entry.target.classList.remove('blur');
       menuId.classList.add('border-bottom');
 
       // observer.unobserve(entry.target);

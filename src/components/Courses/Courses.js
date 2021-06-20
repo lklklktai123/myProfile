@@ -2,8 +2,39 @@ import HeadingTitle from '../HeadingTitle/headingTitle';
 import Course from '../Courses/Course/course';
 import videoMp4 from '../../video/video.mp4';
 import videoWebm from '../../video/video.webm';
-
+import CourseDetail from './Course/CourseDetail/CourseDetail';
+const dataCourses = [
+  {
+    image: 1,
+    title: 'Css3 & Html5',
+    address: 'Udemy.com',
+    teacher: 'Jonas Schedtmann',
+    hours: '28 total h',
+    rating: '4.8(30,365)',
+  },
+  {
+    image: 2,
+    title: 'Java Script',
+    address: 'Udemy.com',
+    teacher: 'Jonas Schedtmann',
+    hours: '68.5 total h',
+    rating: '4.7(106,321)',
+  },
+  {
+    image: 3,
+    title: 'ReactJs',
+    address: 'Udemy.com',
+    teacher: 'Maximilian',
+    hours: '48 total h',
+    rating: '4.6(113,895)',
+  },
+];
 const course = () => {
+  const showCouseDetail = () => {
+    const overlay = document.querySelector('.overlay:last-child');
+    console.log(overlay);
+    overlay.classList.remove('hidden');
+  };
   return (
     <section className="courses blur" id="course" data-id-menu="menu-course">
       <div className="courses-vd-block">
@@ -18,32 +49,21 @@ const course = () => {
         </div>
 
         <div className="courses__block">
-          <Course
-            image={2}
-            title="Java Script"
-            address="Udemy.com"
-            teacher="Jonas Schedtmann"
-            hours="68.5 total h"
-            rating="4.7(106,321)"
-          />
-          <Course
-            image={1}
-            title="Css3 & Html5"
-            address="Udemy.com"
-            teacher="Jonas Schedtmann"
-            hours="28 total h"
-            rating="4.8(30,365)"
-          />
-          <Course
-            image={3}
-            title="ReactJs"
-            address="Udemy.com"
-            teacher="Maximilian"
-            hours="48 total h"
-            rating="4.6(113,895)"
-          />
+          {dataCourses.map((course, index) => (
+            <Course
+              key={`course${index}`}
+              image={course.image}
+              title={course.title}
+              address={course.address}
+              teacher={course.teacher}
+              hours={course.hours}
+              rating={course.rating}
+              clicked={showCouseDetail}
+            />
+          ))}
         </div>
       </div>
+      <CourseDetail />
     </section>
   );
 };
