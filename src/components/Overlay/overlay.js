@@ -1,4 +1,5 @@
-const Overlay = props => {
-  return <div className="overlay hidden">{props.children}</div>;
+import { closeModal } from '../../shared/utilities/helper';
+const Overlay = () => {
+  return <div className="overlay hidden" onClick={closeModal}></div>;
 };
 export default Overlay;

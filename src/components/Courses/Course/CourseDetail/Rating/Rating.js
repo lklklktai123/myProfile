@@ -2,7 +2,7 @@ import { BiStar } from 'react-icons/bi';
 
 const rating = () => {
   return (
-    <div className="container-rating horizon-left-small">
+    <div className="container-rating">
       <BiStar />
       <BiStar />
       <BiStar />

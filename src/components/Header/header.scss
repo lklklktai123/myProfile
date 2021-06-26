@@ -22,6 +22,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 100%;
     &-text {
     }
     .btn-detail {
@@ -33,6 +34,9 @@
       transition: transform 0.2s;
       text-transform: uppercase;
       cursor: pointer;
+      @include respond(tab-port) {
+        margin-top: 7rem;
+      }
     }
     .btn-detail:hover {
       transform: translateY(-0.5rem);

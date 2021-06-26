@@ -2,10 +2,10 @@ import React from 'react';
 
 const aboutContent = props => {
   return (
-    <React.Fragment>
+    <div>
       <h4 className="about-title">{props.title}</h4>
       <p className="normal-text">{props.content}</p>
-    </React.Fragment>
+    </div>
   );
 };
 export default aboutContent;

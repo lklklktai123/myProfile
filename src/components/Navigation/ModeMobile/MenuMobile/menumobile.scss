@@ -18,10 +18,18 @@
   transform: translate(-50%, -50%);
   list-style: none;
   text-align: center;
+  @include respond(phone) {
+    // width < 600?
+    width: 60%;
+  }
 }
 
 &__item {
   margin: 1rem;
+  @include respond(phone) {
+    // width < 600?
+    width: 100%;
+  }
 }
 
 &__link {

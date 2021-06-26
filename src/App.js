@@ -12,13 +12,12 @@ import Overlay from './components/Overlay/overlay';
 import Navigation from './components/Navigation/navigation';
 import ModeMobile from './components/Navigation/ModeMobile/ModeMobile';
 import Modal from './components/Overlay/Modal/modal';
-
+import { CourseContextProvider } from './Context/CourseContext';
 function App() {
   return (
     <React.Fragment>
-      <Overlay>
-        <Modal />
-      </Overlay>
+      <Overlay />
+      <Modal />
       <Navigation />
       <ModeMobile />
       <div className="container">
@@ -26,10 +25,12 @@ function App() {
         <About />
         <Parallax />
         <Experience />
-        <Education />
-        <Courses />
+        {/*  <Education />
+        <CourseContextProvider>
+          <Courses />
+        </CourseContextProvider>
         <Contact />
-        <Footer />
+        <Footer /> */}
       </div>
     </React.Fragment>
   );

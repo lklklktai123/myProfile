@@ -31,13 +31,19 @@ const about = () => {
         adipisicing elit. Accusantium alias.
       </div>
       <div className="about__profile">
-        <AboutContent
-          title="PROFILE"
-          content="Nam nostrum nulla odio placeat possimus quae quaerat quos reiciendis
-        sapiente soluta? Lorem ipsum dolor sit amet."
-        />
+        <div className="about__profile-block">
+          <h4 className="about-title">PROFILE</h4>
+          <p className="normal-text">
+            Nam nostrum nulla odio placeat possimus quae quaerat quos reiciendis
+            sapiente soluta? Lorem ipsum dolor sit amet.
+          </p>
+        </div>
         <AboutContent title="Full Name:" content="Phan Nguyễn Thành Tài" />
         <AboutContent title="Birth Date:" content="19/1/1996" />
+        <AboutContent
+          title="Graduating:"
+          content="Nong Lam University Ho Chi Minh City"
+        />
         <AboutContent title="Job:" content="Front End Developer" />
         <AboutContent title="Website:" content="thanhtai-myProfile.com" />
         <AboutContent title="Skype:" content="thanhtailk96@gmail.com" />

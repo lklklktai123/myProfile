@@ -5,7 +5,7 @@ import { closeModal } from '../../../shared/utilities/helper';
 const Modal = () => {
   const errorCtx = useContext(ErrorContext);
   let modal = (
-    <div className="modal">
+    <div className="modal hidden">
       <FaWindowClose className="modal__btn" onClick={closeModal} />
       <div className="modal__block success">
         <FaCheck className="modal__icon" />

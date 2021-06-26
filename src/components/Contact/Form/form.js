@@ -3,13 +3,14 @@ import emailjs from 'emailjs-com';
 import config from '../../../Config/config';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { ErrorContext } from '../../../Context/error-context';
+import { showmodal } from '../../../shared/utilities/helper';
 const Form = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const errCtx = useContext(ErrorContext);
-  const overlay = document.querySelector('.overlay');
+
   const onchange = value => {
     console.log('Captcha value:', value);
   };
@@ -21,11 +22,10 @@ const Form = () => {
       .then(
         result => {
           errCtx.onError(false);
-          overlay.classList.remove('hidden');
         },
         error => {
           errCtx.onError(true);
-          overlay.classList.remove('hidden');
+          showmodal();
           console.log(error.text);
         }
       );

@@ -13,6 +13,17 @@ export const ScrollToHandler = e => {
 };
 export const closeModal = () => {
   const overlay = document.querySelector('.overlay');
+  const model = document.querySelector('.modal');
+  const courseDetail = document.querySelector('.course-detail');
   overlay.classList.add('hidden');
-  window.location.reload();
+  model.classList.add('hidden');
+  courseDetail.classList.add('hidden');
+  // window.location.reload();
+};
+export const showmodal = () => {
+  const overlay = document.querySelector('.overlay');
+  const model = document.querySelector('.modal');
+  overlay.classList.remove('hidden');
+  model.classList.remove('hidden');
+  // window.location.reload();
 };

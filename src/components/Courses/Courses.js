@@ -3,37 +3,18 @@ import Course from '../Courses/Course/course';
 import videoMp4 from '../../video/video.mp4';
 import videoWebm from '../../video/video.webm';
 import CourseDetail from './Course/CourseDetail/CourseDetail';
-const dataCourses = [
-  {
-    image: 1,
-    title: 'Css3 & Html5',
-    address: 'Udemy.com',
-    teacher: 'Jonas Schedtmann',
-    hours: '28 total h',
-    rating: '4.8(30,365)',
-  },
-  {
-    image: 2,
-    title: 'Java Script',
-    address: 'Udemy.com',
-    teacher: 'Jonas Schedtmann',
-    hours: '68.5 total h',
-    rating: '4.7(106,321)',
-  },
-  {
-    image: 3,
-    title: 'ReactJs',
-    address: 'Udemy.com',
-    teacher: 'Maximilian',
-    hours: '48 total h',
-    rating: '4.6(113,895)',
-  },
-];
-const course = () => {
-  const showCouseDetail = () => {
-    const overlay = document.querySelector('.overlay:last-child');
-    console.log(overlay);
+import { useContext } from 'react';
+import { CourseContext } from '../../Context/CourseContext';
+
+const Courses = () => {
+  const courseCtx = useContext(CourseContext);
+  const showCouseDetail = idDetail => {
+    const overlay = document.querySelector('.overlay');
+    const courseDetail = document.querySelector('.course-detail');
     overlay.classList.remove('hidden');
+    courseDetail.classList.remove('hidden');
+    console.log(idDetail);
+    courseCtx.setCurrentCourse(idDetail);
   };
   return (
     <section className="courses blur" id="course" data-id-menu="menu-course">
@@ -49,7 +30,7 @@ const course = () => {
         </div>
 
         <div className="courses__block">
-          {dataCourses.map((course, index) => (
+          {courseCtx.dataCourses.map((course, index) => (
             <Course
               key={`course${index}`}
               image={course.image}
@@ -58,7 +39,7 @@ const course = () => {
               teacher={course.teacher}
               hours={course.hours}
               rating={course.rating}
-              clicked={showCouseDetail}
+              clicked={() => showCouseDetail(course.courseDetail.id)}
             />
           ))}
         </div>
@@ -67,4 +48,4 @@ const course = () => {
     </section>
   );
 };
-export default course;
+export default Courses;

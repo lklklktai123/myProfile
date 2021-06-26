@@ -53,9 +53,24 @@
   }
   &__profile {
     grid-column: 1 / span 2;
+    @include respond(phone) {
+      grid-column: 1/-1;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      grid-template-rows: min-content;
+      grid-gap: 2rem;
+
+      &-block {
+        grid-column: 1/-1;
+      }
+    }
   }
   &__skill {
     grid-column: 3 / span 2;
+    @include respond(phone) {
+      grid-column: 1/-1;
+    }
   }
   &-title {
     font-size: 2rem;
