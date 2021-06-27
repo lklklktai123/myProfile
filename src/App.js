@@ -25,11 +25,11 @@ function App() {
         <About />
         <Parallax />
         <Experience />
-        {/*  <Education />
+        <Education />
         <CourseContextProvider>
           <Courses />
         </CourseContextProvider>
-        <Contact />
+        {/*  <Contact />
         <Footer /> */}
       </div>
     </React.Fragment>
