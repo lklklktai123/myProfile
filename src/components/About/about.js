@@ -48,10 +48,7 @@ const about = () => {
       <div className="about__profile">
         <div className="about__profile-block">
           <h4 className="about-title">PROFILE</h4>
-          <p className="normal-text">
-            Nam nostrum nulla odio placeat possimus quae quaerat quos reiciendis
-            sapiente soluta? Lorem ipsum dolor sit amet.
-          </p>
+          <p className="normal-text">Information detail to contact me</p>
         </div>
         <AboutContent title="Full Name:" content="Phan Nguyễn Thành Tài" />
         <AboutContent title="Birth Date:" content="19/1/1996" />
@@ -69,9 +66,7 @@ const about = () => {
       <div className="about__skill">
         <AboutContent
           title="SKILLS"
-          content="Accusantium alias beatae deserunt facilis fuga inventore iure laborum
-          magnam, nam nostrum nulla odio placeat possimus quae quaerat quos
-          reiciendis sapiente soluta? Lorem ipsum dolor sit amet."
+          content="Information detail of my skills"
         />
         <AboutSkill percent="60" title="REACTJS" />
         <AboutSkill percent="60" title="JAVASCRIPT" />

@@ -16,10 +16,9 @@ const education = () => {
           position="Udemy.com"
           isRight={false}
           content="Create website my-profile use htm5,css3(scss,animation,cssgrid,...),
-          reactjs(hook,usecontext)
-          Web link: https://thanhtai-forkify.netlify.app/
-          Githup: https://github.com/lklklktai123/forkify
-          Key search: https://forkify-api.herokuapp.com/phrases.html"
+          reactjs(hook,usecontext)"
+          website="https://thanhtai-forkify.netlify.app/"
+          gitHup="https://github.com/lklklktai123/forkify"
           dateTime="25/5/2021- Till Now"
         />
         <Timeline
@@ -27,10 +26,10 @@ const education = () => {
           projectTitle="Forkify Website create recipes and search for recipes"
           position="Udemy.com"
           isRight={true}
-          content="Read Api and convert teamplate from html ,css to reactjs , using some hook,redux,scss,axios tricks
-          Web link: https://thanhtai-forkify.netlify.app/
-          Githup: https://github.com/lklklktai123/forkify
-          Key search: https://forkify-api.herokuapp.com/phrases.html"
+          content="Read Api and convert teamplate from html ,css to reactjs , using some hook,redux,scss,axios tricks"
+          website="https://thanhtai-forkify.netlify.app/"
+          gitHup="https://github.com/lklklktai123/forkify"
+          linkKey="https://forkify-api.herokuapp.com/phrases.html"
           dateTime="1/5/2021 - 22/5/2021"
         />
         <Timeline

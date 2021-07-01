@@ -6,6 +6,14 @@
     position: relative;
     width: 90%;
     justify-self: center;
+    & a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.5s;
+      &:hover {
+        font-style: italic;
+      }
+    }
     @include respond(phone) {
       padding: 2rem 0;
       justify-self: start;

@@ -38,6 +38,7 @@
     border-radius: 2px;
     background: none;
     justify-self: start;
+    cursor: pointer;
     &:hover {
       background-color: $color-grey-light-1;
       color: $color-primary-dark;
