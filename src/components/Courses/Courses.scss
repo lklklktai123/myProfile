@@ -2,6 +2,7 @@
 @import './Course/CourseDetail/CourseDetail.scss';
 .courses {
   grid-column: 1/-1;
+  grid-row: 6/7;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content;

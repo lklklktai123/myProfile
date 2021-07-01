@@ -29,8 +29,8 @@ function App() {
         <CourseContextProvider>
           <Courses />
         </CourseContextProvider>
-        {/*  <Contact />
-        <Footer /> */}
+        <Contact />
+        <Footer />
       </div>
     </React.Fragment>
   );

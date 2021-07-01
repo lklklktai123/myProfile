@@ -1,14 +1,18 @@
 .contact {
   grid-column: 1/-1;
+  grid-row: 7/8;
   display: grid;
   grid-template-columns: minmax(min-content, 1fr);
   grid-template-rows: min-content;
   padding-left: 10rem;
   padding-right: 10rem;
+  @include respond(phone) {
+    padding: 0;
+  }
   &__container {
     grid-column: 1/-1;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 2fr);
     grid-template-rows: min-content;
     grid-column-gap: 3rem;
     margin-top: 5rem;

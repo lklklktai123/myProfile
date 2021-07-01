@@ -11,24 +11,18 @@ const experience = () => {
       <h4 className="heading-4">Some real experiences</h4>
       <div className="experience__timeline">
         <Timeline
-          projectTitle="Envato Ltd."
+          projectTitle="Harmony Ltd."
           position="Software Engineer"
           isRight={false}
-          content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-          optio, dolorum provident rerum aut hic quasi placeat iure tempora
-          laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui
-          ut."
-          dateTime="January 2014 - Till Now"
+          content="Build Website Api for Mobile Application use .Net core 2.2 and SQL server"
+          dateTime="1/2020 - 6/2020"
         />
         <Timeline
-          projectTitle="Envato Ltd."
-          position="Software Engineer"
+          projectTitle="Harmony Ltd."
+          position="Front end developer"
           isRight={true}
-          content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-          optio, dolorum provident rerum aut hic quasi placeat iure tempora
-          laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui
-          ut."
-          dateTime="January 2014 - Till Now"
+          content="Create a landing page according to the design for the company's application use Html5 Css3,Bootstrap,javascript"
+          dateTime="10/2019 - 12/2019"
         />
       </div>
     </section>

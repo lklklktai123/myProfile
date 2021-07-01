@@ -75,7 +75,7 @@ const Form = () => {
         rows="7"
         name="message"
       />
-      <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} />
+      <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} size="normal" />
       <button type="submit" className="btn-submit">
         Submit
       </button>

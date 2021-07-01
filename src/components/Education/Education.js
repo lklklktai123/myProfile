@@ -12,25 +12,52 @@ const education = () => {
       <div className="education__timeline">
         <Timeline
           nameIcon="graduation"
-          projectTitle="Envato Ltd."
-          position="Software Engineer"
+          projectTitle="My Profile"
+          position="Udemy.com"
           isRight={false}
-          content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-          optio, dolorum provident rerum aut hic quasi placeat iure tempora
-          laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui
-          ut."
-          dateTime="January 2014 - Till Now"
+          content="Create website my-profile use htm5,css3(scss,animation,cssgrid,...),
+          reactjs(hook,usecontext)
+          Web link: https://thanhtai-forkify.netlify.app/
+          Githup: https://github.com/lklklktai123/forkify
+          Key search: https://forkify-api.herokuapp.com/phrases.html"
+          dateTime="25/5/2021- Till Now"
         />
         <Timeline
           nameIcon="graduation"
-          projectTitle="Envato Ltd."
-          position="Software Engineer"
+          projectTitle="Forkify Website create recipes and search for recipes"
+          position="Udemy.com"
           isRight={true}
-          content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto,
-          optio, dolorum provident rerum aut hic quasi placeat iure tempora
-          laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui
-          ut."
-          dateTime="January 2014 - Till Now"
+          content="Read Api and convert teamplate from html ,css to reactjs , using some hook,redux,scss,axios tricks
+          Web link: https://thanhtai-forkify.netlify.app/
+          Githup: https://github.com/lklklktai123/forkify
+          Key search: https://forkify-api.herokuapp.com/phrases.html"
+          dateTime="1/5/2021 - 22/5/2021"
+        />
+        <Timeline
+          nameIcon="graduation"
+          projectTitle="Website Sale"
+          position="Nong Lam University"
+          isRight={false}
+          content="Teamwork building sales website use
+          html,css,javascript,java web."
+          dateTime="09/2019 - 2/2020"
+        />
+        <Timeline
+          nameIcon="graduation"
+          projectTitle="Game Caro"
+          position="Nong Lam University"
+          isRight={true}
+          content="Teamwork,building aplication game caro with java programming"
+          dateTime="02/2019 - 6/2020"
+        />
+        <Timeline
+          nameIcon="graduation"
+          projectTitle="Database for website"
+          position="Nong Lam University"
+          isRight={false}
+          content="Teamwork building Database for website use SQL server
+          html,css,javascript,java web."
+          dateTime="02/2018 - 6/2018"
         />
       </div>
     </section>

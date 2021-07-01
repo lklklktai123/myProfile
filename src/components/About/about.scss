@@ -1,5 +1,6 @@
 .about {
   grid-column: col-start 2 / col-end 7;
+  grid-row: 2/3;
   display: grid;
   grid-template-rows: repeat(6, min-content);
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -9,9 +10,15 @@
   &__avartar {
     grid-column: 1/2;
     display: grid;
+    @include respond(phone) {
+      grid-column: 1/-1;
+    }
   }
   &__content {
     grid-column: 2/5;
+    @include respond(phone) {
+      grid-column: 1/-1;
+    }
   }
 
   &__shape {
@@ -142,8 +149,4 @@
       margin-right: 1rem;
     }
   }
-}
-.normal-text {
-  font-size: 1.5rem;
-  font-weight: 300;
 }

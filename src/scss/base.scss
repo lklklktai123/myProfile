@@ -68,8 +68,8 @@ body {
   font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
-  color: $color-grey-dark-2;
+  line-height: 1.7;
+  color: $color-grey-dark-1;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -128,9 +128,17 @@ code {
   color: $color-grey-dark-1;
   font-weight: 700;
 }
+.normal-text {
+  font-size: 1.6rem;
+  font-weight: 300;
+  @include respond(tab-port) {
+    font-size: 1.8rem;
+  }
+}
 section {
   transition: all 0.2s;
 }
+
 .hidden {
   display: none !important;
 }

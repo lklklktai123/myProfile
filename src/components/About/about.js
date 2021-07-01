@@ -20,15 +20,30 @@ const about = () => {
         </figure>
       </div>
       <div className="about__content normal-text">
-        Psum dolor sit amet, consectetur adipisicing elit. Accusantium alias
-        beatae deserunt facilis fuga inventore iure laborum magnam, nam nostrum
-        nulla odio placeat possimus quae quaerat quos reiciendis sapiente
-        soluta? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Accusantium alias. Psum dolor sit amet, consectetur adipisicing elit.
-        Accusantium alias beatae deserunt facilis fuga inventore iure laborum
-        magnam, nam nostrum nulla odio placeat possimus quae quaerat quos
-        reiciendis sapiente soluta? Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Accusantium alias.
+        <p>Hi, My name is Phan Nguyen Thanh Tai.Please to meet you !</p>
+        <p>And today, let me introduce myself</p>
+        <p>
+          I'm a Front End Developer .I'm graduated with a degree in Engineering
+          at Nong Lam University Ho Chi Minh City
+        </p>
+        <p>
+          When I was in school, I worked as an intern at Levinci and later as a
+          freelancer.
+        </p>
+        <p>
+          At the company, I have held the position of front end web developer in
+          2 company projects and web api in another company's project.
+        </p>
+        <p>
+          Now that I have graduated from school, I want to have a good
+          environment to develop myself. Besides, I have a passion for web
+          frontend development and I am confident that I will do well in this
+          position.
+        </p>
+        <p>
+          Thank you so much for your interest in me and I look forward to
+          working with you !
+        </p>
       </div>
       <div className="about__profile">
         <div className="about__profile-block">

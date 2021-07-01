@@ -7,8 +7,15 @@
   text-align: center;
   transition: box-shadow 0.2s;
   border-radius: 2px;
+
+  @include respond(tab-port) {
+    grid-column: 1/-1;
+  }
   &:hover {
     box-shadow: $shadow-dark-1;
+    @include respond(phone) {
+      box-shadow: none;
+    }
   }
   .address__icon {
     font-size: 5rem;

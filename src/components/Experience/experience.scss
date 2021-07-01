@@ -1,5 +1,6 @@
 .experience {
   grid-column: 1/-1;
+  grid-row: 4/5;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, min-content);

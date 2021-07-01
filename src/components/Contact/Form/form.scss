@@ -1,7 +1,7 @@
 &-form {
   grid-column: 2/3;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(min-content, 1fr));
   grid-template-rows: repeat(5, min-content);
   padding: 2rem;
   grid-gap: 2rem;
@@ -16,21 +16,43 @@
         border-bottom: 3px solid #a94442;
       }
     }
+    @include respond(small-phone) {
+      width: 90%;
+    }
+  }
+  @include respond(tab-port) {
+    grid-column: 1/-1;
   }
   .input-name {
     grid-column: 1/2;
+    @include respond(big-phone) {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+    }
   }
   .input-mail {
     grid-column: 2/3;
+    @include respond(big-phone) {
+      grid-column: 1/-1;
+      grid-row: 2/3;
+    }
   }
 
   .input-message {
     grid-column: 1/-1;
-    grid-row: 3/4;
+    @include respond(big-phone) {
+      grid-row: 4/5;
+    }
+    @include respond(small-phone) {
+      width: 90%;
+    }
   }
   .input-subject {
     grid-column: 1/-1;
     grid-row: 2/3;
+    @include respond(big-phone) {
+      grid-row: 3/4;
+    }
   }
   .input-message {
     padding: 1rem;
@@ -58,5 +80,10 @@
       background-color: $color-primary-dark;
       transform: translateY(-0.5rem);
     }
+  }
+}
+@include respond(big-phone) {
+  iframe {
+    width: 95%;
   }
 }
