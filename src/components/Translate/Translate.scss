@@ -1,0 +1,73 @@
+.LangSelector {
+  position: fixed;
+  z-index: 100;
+  bottom: 2%;
+  left: 1%;
+  width: 5rem;
+  height: 5rem;
+  background-color: $color-white;
+  clip-path: circle(50% at 50% 50%);
+  & img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 8rem;
+    overflow: hidden;
+  }
+}
+.LangContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  z-index: 1100;
+  width: 30%;
+  @include respond(phone) {
+    width: 40%;
+  }
+  .radio-block {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: min-content;
+    cursor: pointer;
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+
+    .radio-input {
+      align-self: center;
+      justify-self: flex-end;
+    }
+  }
+  &__title {
+    font-size: 2.3rem;
+    text-align: center;
+    display: inline-block;
+    font-weight: 700;
+  }
+  &-child {
+    transition: all 0.2s;
+  }
+  &-child img {
+    margin-left: 2rem;
+    width: 5rem;
+  }
+  // .icon-selected {
+  //   font-size: 2rem;
+  //   color: $color-primary;
+  //   margin-left: 2rem;
+  //   margin-bottom: 1rem;
+  //   opacity: 0;
+  // }
+
+  // .input-radio:checked ~ .LangContent-child .icon-selected {
+  //   opacity: 1;
+  // }
+}

@@ -1,6 +1,7 @@
+import { getInitialProps } from 'react-i18next';
 import { BiStar } from 'react-icons/bi';
 
-const rating = () => {
+const rating = props => {
   return (
     <div className="container-rating">
       <BiStar />
@@ -8,7 +9,7 @@ const rating = () => {
       <BiStar />
       <BiStar />
       <BiStar />
-      <span className="normal-text">4.7 (rating)</span>
+      <span className="normal-text">4.7 ({props.text})</span>
     </div>
   );
 };

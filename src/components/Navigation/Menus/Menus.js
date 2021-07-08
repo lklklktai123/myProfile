@@ -1,15 +1,16 @@
 import Menu from './Menu/Menu';
 import { dataMenu } from '../../../shared/utilities/config';
 import { ScrollToHandler } from '../../../shared/utilities/helper';
-
-const menus = () => {
+import { useTranslation } from 'react-i18next';
+const Menus = () => {
+  const { t } = useTranslation();
   return (
     <ul className="navigation__nav-bar">
       {dataMenu.map((menu, index) => (
         <Menu
           key={`menu${index}`}
           link={menu.link}
-          name={menu.name}
+          name={t(menu.name)}
           idMenu={menu.idMenu}
           clicked={e => ScrollToHandler(e)}
         />
@@ -17,4 +18,4 @@ const menus = () => {
     </ul>
   );
 };
-export default menus;
+export default Menus;

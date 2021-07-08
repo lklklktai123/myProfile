@@ -38,7 +38,7 @@ const course = props => {
         <span className="normal-text">{props.rating}</span>
       </div>
       <button className="course__btn" onClick={props.clicked}>
-        Detail
+        {props.detail}
       </button>
     </div>
   );

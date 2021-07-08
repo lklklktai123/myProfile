@@ -2,8 +2,10 @@ import { ErrorContext } from '../../../../Context/error-context';
 import { useContext } from 'react';
 import { dataMenu } from '../../../../shared/utilities/config';
 import { ScrollToHandler } from '../../../../shared/utilities/helper';
+import { useTranslation } from 'react-i18next';
 
 const MenuMobile = () => {
+  const { t } = useTranslation();
   const errCtx = useContext(ErrorContext);
   const handlerScrollTo = e => {
     document.getElementById('navi-toggle').checked = false;
@@ -11,6 +13,7 @@ const MenuMobile = () => {
     console.log(errCtx.statusIcon);
     ScrollToHandler(e);
   };
+  console.log(t('Home'));
   const listMenu = dataMenu.map((menu, index) => (
     <li
       className="mode-mobile__item"
@@ -20,7 +23,7 @@ const MenuMobile = () => {
     >
       <a href={`#${menu.link}`} className="mode-mobile__link">
         <span>0{index + 1}</span>
-        {menu.name}
+        {t(`${menu.name}`)}
       </a>
     </li>
   ));

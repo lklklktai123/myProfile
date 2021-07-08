@@ -4,7 +4,9 @@ import { CourseContext } from '../../../../Context/CourseContext';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import React, { useContext } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 const CourseDetail = () => {
+  const { t } = useTranslation();
   const courseCtx = useContext(CourseContext);
 
   const [dataCouseDetail] = courseCtx.dataCourses.filter(
@@ -60,7 +62,7 @@ const CourseDetail = () => {
     <React.Fragment>
       {/* <Overlay /> */}
       <div className="course-detail hidden">
-        <div className="course-detail__title">Course</div>
+        <div className="course-detail__title">{t('Course')}</div>
         <div className="course-detail__left">
           <div className="course-detail__left-block">
             <FaGraduationCap className="icon" />
@@ -71,12 +73,14 @@ const CourseDetail = () => {
             {/* {dataCouseDetail.courseDetail.name} */}
           </p>
           <p className="normal-text">{dataCouseDetail.address} (Website)</p>
-          <p className="normal-text">{dataCouseDetail.teacher} (teacher)</p>
-          <p className="normal-text">{dataCouseDetail.hours}</p>
-          <Rating rating={dataCouseDetail.rating} />
-          <p className="normal-text">Decriptions :</p>
           <p className="normal-text">
-            {dataCouseDetail.courseDetail.description}
+            {dataCouseDetail.teacher} ({t('teacher')})
+          </p>
+          <p className="normal-text">{dataCouseDetail.hours}</p>
+          <Rating rating={dataCouseDetail.rating} text={t('rating')} />
+          <p className="normal-text">{t('Decription')} :</p>
+          <p className="normal-text">
+            {t(dataCouseDetail.courseDetail.description)}
           </p>
         </div>
         <div className="course-detail__gallery">

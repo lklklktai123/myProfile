@@ -4,7 +4,9 @@ import config from '../../../Config/config';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { ErrorContext } from '../../../Context/error-context';
 import { showmodal } from '../../../shared/utilities/helper';
+import { useTranslation } from 'react-i18next';
 const Form = () => {
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
@@ -35,7 +37,7 @@ const Form = () => {
       <input
         value={name}
         type="text"
-        placeholder="Name"
+        placeholder={t('Name')}
         className="input-name normal-text"
         name="name"
         required
@@ -58,7 +60,7 @@ const Form = () => {
       <input
         value={subject}
         type="text"
-        placeholder="Subject"
+        placeholder={t('Subject')}
         className="input-subject normal-text"
         name="subject"
         required
@@ -66,7 +68,7 @@ const Form = () => {
       />
 
       <textarea
-        placeholder="Message"
+        placeholder={t('Message')}
         required
         value={message}
         type="text"
@@ -77,7 +79,7 @@ const Form = () => {
       />
       <ReCAPTCHA sitekey={config.SITE_KEY} onChange={onchange} size="normal" />
       <button type="submit" className="btn-submit">
-        Submit
+        {t('Submit')}
       </button>
     </form>
   );

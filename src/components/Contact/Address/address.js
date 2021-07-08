@@ -1,16 +1,13 @@
 import { BiMap } from 'react-icons/bi';
 
-const address = () => {
+const address = props => {
   return (
     <div className="contact__container-address">
       <BiMap className="address__icon" />
-      <h4 className="address__title">Contact Address</h4>
-      <p className="normal-text address__text">
-        119/49A Nguyen Hong Dao Street, Ward 14, Tan Binh District,Ho Chi Minh
-        City
-      </p>
-      <p className="normal-text address__text">Email:thanhtailk96@gmail.com</p>
-      <p className="normal-text">Phone:0965143263</p>
+      <h4 className="address__title">{props.title}</h4>
+      <p className="normal-text address__text">{props.address}</p>
+      <p className="normal-text address__text">{props.email}</p>
+      <p className="normal-text">{props.phone}</p>
     </div>
   );
 };

@@ -13,6 +13,7 @@ import Navigation from './components/Navigation/navigation';
 import ModeMobile from './components/Navigation/ModeMobile/ModeMobile';
 import Modal from './components/Overlay/Modal/modal';
 import { CourseContextProvider } from './Context/CourseContext';
+import LangSelector from './components/Translate/LangSelector';
 function App() {
   return (
     <React.Fragment>
@@ -20,6 +21,7 @@ function App() {
       <Modal />
       <Navigation />
       <ModeMobile />
+      <LangSelector />
       <div className="container">
         <Header />
         <About />

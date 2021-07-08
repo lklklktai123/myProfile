@@ -16,6 +16,8 @@ import course_css_4 from '../image/course-css-4.PNG';
 import course_css_5 from '../image/course-css-5.PNG';
 import course_react_1 from '../image/course-reactjs-1.PNG';
 import course_react_2 from '../image/course-reactjs-2.PNG';
+import vn from '../image/vietnam.svg';
+import eng from '../image/eng.svg';
 
 const images = {
   imgCss,
@@ -36,6 +38,8 @@ const images = {
   course_css_5,
   course_react_1,
   course_react_2,
+  vn,
+  eng,
 };
 
 export default images;

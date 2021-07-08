@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 // import './index.css';
 import App from './App';
 import './index.scss';
 import reportWebVitals from './reportWebVitals';
 import { ErrorContextProvider } from './Context/error-context';
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
     <ErrorContextProvider>
-      <App />
+      <Suspense fallback={<span>Loading...</span>}>
+        <App />
+      </Suspense>
     </ErrorContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

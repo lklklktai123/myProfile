@@ -1,22 +1,26 @@
 import Timeline from '../Experience/TimeLine/timeline';
 import HeadingTitle from '../HeadingTitle/headingTitle';
-const education = () => {
+import { useTranslation } from 'react-i18next';
+
+const Education = () => {
+  const { t } = useTranslation();
   return (
     <section
       className="education vertical-normal blur"
       id="education"
       data-id-menu="menu-education"
     >
-      <HeadingTitle title="EDUCATION" />
-      <h4 className="heading-4">Some projects when i was study</h4>
+      <HeadingTitle title={t('Education')} />
+      <h4 className="heading-4">{t('Some_projects_when_i_was_study')}</h4>
       <div className="education__timeline">
         <Timeline
           nameIcon="graduation"
           projectTitle="My Profile"
           position="Udemy.com"
           isRight={false}
-          content="Create website my-profile use htm5,css3(scss,animation,cssgrid,...),
-          reactjs(hook,usecontext)"
+          content={t(
+            'Create_website_my_profile_use_htm5_css3_reactjs_hook_usecontext'
+          )}
           website="https://thanhtai-forkify.netlify.app/"
           gitHup="https://github.com/lklklktai123/forkify"
           dateTime="25/5/2021- Till Now"
@@ -26,7 +30,9 @@ const education = () => {
           projectTitle="Forkify Website create recipes and search for recipes"
           position="Udemy.com"
           isRight={true}
-          content="Read Api and convert teamplate from html ,css to reactjs , using some hook,redux,scss,axios tricks"
+          content={t(
+            'Read_Api_and_convert_teamplate_from_html_css_to_reactjs_using_some_hook_redux_scss_axios_tricks'
+          )}
           website="https://thanhtai-forkify.netlify.app/"
           gitHup="https://github.com/lklklktai123/forkify"
           linkKey="https://forkify-api.herokuapp.com/phrases.html"
@@ -37,8 +43,9 @@ const education = () => {
           projectTitle="Website Sale"
           position="Nong Lam University"
           isRight={false}
-          content="Teamwork building sales website use
-          html,css,javascript,java web."
+          content={t(
+            'Teamwork_building_sales_website_use_html_css_javascript_java_web'
+          )}
           dateTime="09/2019 - 2/2020"
         />
         <Timeline
@@ -46,7 +53,9 @@ const education = () => {
           projectTitle="Game Caro"
           position="Nong Lam University"
           isRight={true}
-          content="Teamwork,building aplication game caro with java programming"
+          content={t(
+            'Teamwork_building_aplication_game_caro_with_java_programming'
+          )}
           dateTime="02/2019 - 6/2020"
         />
         <Timeline
@@ -54,12 +63,11 @@ const education = () => {
           projectTitle="Database for website"
           position="Nong Lam University"
           isRight={false}
-          content="Teamwork building Database for website use SQL server
-          html,css,javascript,java web."
+          content={t('Teamwork_building_Database_for_website_use_SQL_server')}
           dateTime="02/2018 - 6/2018"
         />
       </div>
     </section>
   );
 };
-export default education;
+export default Education;
