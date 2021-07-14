@@ -1,4 +1,3 @@
-import { getInitialProps } from 'react-i18next';
 import { BiStar } from 'react-icons/bi';
 
 const rating = props => {

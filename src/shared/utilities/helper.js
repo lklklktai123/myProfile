@@ -1,5 +1,6 @@
 export const ScrollToHandler = e => {
   e.preventDefault();
+  // console.log(e.target.getAttribute('href'));
   const idSection = document.querySelector(e.target.getAttribute('href'));
   // idSection.getBoundingClientRect();
   // Scrolling
@@ -29,4 +30,23 @@ export const showmodal = () => {
   overlay.classList.remove('hidden');
   model.classList.remove('hidden');
   // window.location.reload();
+};
+
+export const checkViewIntersection = (inView, entry) => {
+  const navBar = document.querySelector('.navigation__nav-bar');
+  const childBar = navBar ? navBar.childNodes : null;
+  if (inView) {
+    if (childBar) {
+      childBar.forEach(menu => menu.classList.remove('border-bottom'));
+      document
+        .querySelector(`#${entry.target.dataset.idMenu}`)
+        .classList.add('border-bottom');
+    }
+  }
+};
+export const threshold = (value = 0.3) => {
+  return {
+    /* Optional options */
+    threshold: value,
+  };
 };

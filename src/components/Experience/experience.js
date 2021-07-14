@@ -1,13 +1,21 @@
 import HeadingTitle from '../HeadingTitle/headingTitle';
 import Timeline from './TimeLine/timeline';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
+import {
+  checkViewIntersection,
+  threshold,
+} from '../../shared/utilities/helper';
 const Experience = () => {
   const { t } = useTranslation();
+  const { ref, inView, entry } = useInView(threshold());
+  checkViewIntersection(inView, entry);
   return (
     <section
       className="experience vertical-normal blur"
       id="experience"
       data-id-menu="menu-experience"
+      ref={ref}
     >
       <HeadingTitle title="EXPERIENCE" />
       <h4 className="heading-4">{t('Some_real_experiences')}</h4>

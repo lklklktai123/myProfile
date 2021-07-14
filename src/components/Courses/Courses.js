@@ -6,10 +6,16 @@ import CourseDetail from './Course/CourseDetail/CourseDetail';
 import { useContext } from 'react';
 import { CourseContext } from '../../Context/CourseContext';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
+import {
+  checkViewIntersection,
+  threshold,
+} from '../../shared/utilities/helper';
 
 const Courses = () => {
   const { t } = useTranslation();
   const courseCtx = useContext(CourseContext);
+  const { ref, inView, entry } = useInView(threshold(0.3));
   const showCouseDetail = idDetail => {
     const overlay = document.querySelector('.overlay');
     const courseDetail = document.querySelector('.course-detail');
@@ -18,8 +24,14 @@ const Courses = () => {
     // console.log(idDetail);
     courseCtx.setCurrentCourse(idDetail);
   };
+  checkViewIntersection(inView, entry);
   return (
-    <section className="courses blur" id="course" data-id-menu="menu-course">
+    <section
+      className="courses blur"
+      id="course"
+      data-id-menu="menu-course"
+      ref={ref}
+    >
       <div className="courses-vd-block">
         <HeadingTitle title={t('Course')} />
         <h4 className="heading-4">{t('Some_course_studied')}</h4>

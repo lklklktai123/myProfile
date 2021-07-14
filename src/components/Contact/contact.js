@@ -2,10 +2,19 @@ import HeadingTitle from '../HeadingTitle/headingTitle';
 import Address from '../../components/Contact/Address/address';
 import Form from './Form/form';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
+import {
+  checkViewIntersection,
+  threshold,
+} from '../../shared/utilities/helper';
+
 const Contact = () => {
   const { t } = useTranslation();
+  const { ref, inView, entry } = useInView(threshold());
+  checkViewIntersection(inView, entry);
   return (
     <section
+      ref={ref}
       className="contact vertical-normal blur"
       id="contact"
       data-id-menu="menu-contact"

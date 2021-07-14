@@ -4,11 +4,19 @@ import AboutContent from './AboutContent/aboutContent';
 import AboutSkill from './AboutSkill/aboutSkill';
 import { FaDownload } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
-
-const About = () => {
+import { useInView } from 'react-intersection-observer';
+import {
+  checkViewIntersection,
+  threshold,
+} from '../../shared/utilities/helper';
+import React from 'react';
+const About = props => {
+  const { ref, inView, entry } = useInView(threshold(0.4));
   const { t } = useTranslation();
+  checkViewIntersection(inView, entry);
   return (
     <section
+      ref={ref}
       className="about vertical-normal blur"
       id="about"
       data-id-menu="menu-about"

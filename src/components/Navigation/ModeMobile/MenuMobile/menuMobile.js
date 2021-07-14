@@ -10,10 +10,9 @@ const MenuMobile = () => {
   const handlerScrollTo = e => {
     document.getElementById('navi-toggle').checked = false;
     errCtx.toggleIcon(true);
-    console.log(errCtx.statusIcon);
+    // console.log(errCtx.statusIcon);
     ScrollToHandler(e);
   };
-  console.log(t('Home'));
   const listMenu = dataMenu.map((menu, index) => (
     <li
       className="mode-mobile__item"

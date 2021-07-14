@@ -1,11 +1,20 @@
 import Timeline from '../Experience/TimeLine/timeline';
 import HeadingTitle from '../HeadingTitle/headingTitle';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
+import {
+  checkViewIntersection,
+  threshold,
+} from '../../shared/utilities/helper';
 
 const Education = () => {
   const { t } = useTranslation();
+  const { ref, inView, entry } = useInView(threshold());
+  checkViewIntersection(inView, entry);
+
   return (
     <section
+      ref={ref}
       className="education vertical-normal blur"
       id="education"
       data-id-menu="menu-education"

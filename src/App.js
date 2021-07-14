@@ -1,5 +1,4 @@
 import React from 'react';
-
 import About from './components/About/about';
 import Contact from './components/Contact/contact';
 import Courses from './components/Courses/Courses';
@@ -14,7 +13,8 @@ import ModeMobile from './components/Navigation/ModeMobile/ModeMobile';
 import Modal from './components/Overlay/Modal/modal';
 import { CourseContextProvider } from './Context/CourseContext';
 import LangSelector from './components/Translate/LangSelector';
-function App() {
+
+const App = () => {
   return (
     <React.Fragment>
       <Overlay />
@@ -22,6 +22,7 @@ function App() {
       <Navigation />
       <ModeMobile />
       <LangSelector />
+
       <div className="container">
         <Header />
         <About />
@@ -36,6 +37,6 @@ function App() {
       </div>
     </React.Fragment>
   );
-}
+};
 
 export default App;
