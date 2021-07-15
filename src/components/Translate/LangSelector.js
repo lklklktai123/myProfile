@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import images from '../../image/exportImage';
+import { ErrorContext } from '../../Context/error-context';
+import { useContext } from 'react';
 
 const LangSelector = () => {
+  const errorCtx = useContext(ErrorContext);
   const { i18n, t } = useTranslation();
   const [selectedLang, setSelectedLang] = useState('en');
   let selected = null;
   const changeLanguage = event => {
-    console.log(event.target.value);
+    if (event.target.value === 'vn') {
+      errorCtx.cvIsVn(true);
+    } else {
+      errorCtx.cvIsVn(false);
+    }
     setSelectedLang(event.target.value);
     i18n.changeLanguage(event.target.value);
   };

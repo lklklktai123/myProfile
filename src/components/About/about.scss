@@ -133,12 +133,18 @@
   &__btn {
     grid-column: 1/-1;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
   &__resume {
     padding: 1.5rem 0rem;
+    display: block;
     width: 20rem;
     border: 1px solid $color-grey-dark-1;
-    transition: all 0.2s;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
     &:hover {
       color: white;
       background: $color-primary;

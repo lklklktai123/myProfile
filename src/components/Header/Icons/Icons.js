@@ -8,7 +8,12 @@ import {
 const icons = () => {
   return (
     <React.Fragment>
-      <a href="/#" className="btn__link">
+      <a
+        href="https://www.facebook.com/thanhtai.pn/"
+        className="btn__link"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FaFacebookF className="btn__link-icon" />
       </a>
       <a href="/#" className="btn__link">

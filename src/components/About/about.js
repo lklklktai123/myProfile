@@ -1,16 +1,20 @@
 import HeadingTitle from '../HeadingTitle/headingTitle';
-import author from '../../image/author.jpg';
+import author from '../../image/14130107.png';
 import AboutContent from './AboutContent/aboutContent';
 import AboutSkill from './AboutSkill/aboutSkill';
 import { FaDownload } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
+import { ErrorContext } from '../../Context/error-context';
+import { useContext } from 'react';
 import {
   checkViewIntersection,
   threshold,
 } from '../../shared/utilities/helper';
 import React from 'react';
 const About = props => {
+  const errorCtx = useContext(ErrorContext);
+  console.log(errorCtx.isVn);
   const { ref, inView, entry } = useInView(threshold(0.4));
   const { t } = useTranslation();
   checkViewIntersection(inView, entry);
@@ -90,10 +94,18 @@ const About = props => {
         <AboutSkill percent="70" title="HTML/CSS" />
       </div>
       <div className="about__btn">
-        <button className="about__resume">
+        <a
+          href={
+            errorCtx.isVn
+              ? '../../file/Phan-Nguyen-Thanh-Tai-vn.pdf'
+              : '../../file/Phan-Nguyen-Thanh-Tai-en.pdf'
+          }
+          className="about__resume"
+          download
+        >
           <FaDownload className="about__resume-icon" />
           {t('Dowload_Resume')}
-        </button>
+        </a>
       </div>
     </section>
   );
