@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import { ErrorContext } from '../../Context/error-context';
 import { useContext } from 'react';
+import fileSaver from 'file-saver';
 import {
   checkViewIntersection,
   threshold,
@@ -17,6 +18,13 @@ const About = props => {
   console.log(errorCtx.isVn);
   const { ref, inView, entry } = useInView(threshold(0.4));
   const { t } = useTranslation();
+  let url = '';
+  const saveFile = () => {
+    fileSaver.saveAs(
+      process.env.PUBLIC_URL + '/resource/Phan-Nguyen-Thanh-Tai-vn.pdf',
+      'Phan-Nguyen-Thanh-Tai-vn.pdf'
+    );
+  };
   checkViewIntersection(inView, entry);
   return (
     <section
@@ -94,18 +102,10 @@ const About = props => {
         <AboutSkill percent="70" title="HTML/CSS" />
       </div>
       <div className="about__btn">
-        <a
-          href={
-            errorCtx.isVn
-              ? '../../file/Phan-Nguyen-Thanh-Tai-vn.pdf'
-              : '../../file/Phan-Nguyen-Thanh-Tai-en.pdf'
-          }
-          className="about__resume"
-          download
-        >
+        <button className="about__resume" onClick={saveFile}>
           <FaDownload className="about__resume-icon" />
           {t('Dowload_Resume')}
-        </a>
+        </button>
       </div>
     </section>
   );

@@ -30,8 +30,8 @@ const Education = () => {
           content={t(
             'Create_website_my_profile_use_htm5_css3_reactjs_hook_usecontext'
           )}
-          website="https://thanhtai-forkify.netlify.app/"
-          gitHup="https://github.com/lklklktai123/forkify"
+          website="https://thanhtai-my-profile.netlify.app/"
+          gitHup="https://github.com/lklklktai123/myProfile"
           dateTime="25/5/2021- Till Now"
         />
         <Timeline

@@ -15,7 +15,7 @@ const timeline = props => {
         <p className="normal-text ">{props.content}</p>
         {props.website ? (
           <p className="normal-text">
-            Website:{' '}
+            Website:
             <a href={props.website} target="_blank" rel="noreferrer">
               {props.website}
             </a>
