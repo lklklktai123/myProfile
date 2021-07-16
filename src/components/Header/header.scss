@@ -35,6 +35,7 @@
       transition: transform 0.2s;
       text-transform: uppercase;
       cursor: pointer;
+      background-color: $color-white;
       @include respond(tab-port) {
         margin-top: 7rem;
       }

@@ -46,6 +46,9 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 7rem;
     padding-bottom: 10rem;
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
   }
   &__child {
     display: grid;

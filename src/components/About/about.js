@@ -18,12 +18,11 @@ const About = props => {
   console.log(errorCtx.isVn);
   const { ref, inView, entry } = useInView(threshold(0.4));
   const { t } = useTranslation();
-  let url = '';
+  let url = errorCtx.isVn
+    ? '/resource/Phan-Nguyen-Thanh-Tai-vn.pdf'
+    : '/resource/Phan-Nguyen-Thanh-Tai-en.pdf';
   const saveFile = () => {
-    fileSaver.saveAs(
-      process.env.PUBLIC_URL + '/resource/Phan-Nguyen-Thanh-Tai-vn.pdf',
-      'Phan-Nguyen-Thanh-Tai-vn.pdf'
-    );
+    fileSaver.saveAs(process.env.PUBLIC_URL + url, 'Phan-Nguyen-Thanh-Tai.pdf');
   };
   checkViewIntersection(inView, entry);
   return (
@@ -85,7 +84,10 @@ const About = props => {
           content={t('Nong_Lam_University_Ho_Chi_Minh_City')}
         />
         <AboutContent title={`${t('Job')} :`} content="Front End Developer" />
-        <AboutContent title="Website:" content="thanhtai-myProfile.com" />
+        <AboutContent
+          title="Website:"
+          content="thanhtai-my-profile.netlify.app"
+        />
         <AboutContent title="Skype:" content="thanhtailk96@gmail.com" />
         <AboutContent title="Email:" content="thanhtailk96@gmail.com" />
         <AboutContent title={`${t('Phone')} :`} content="0965143263" />

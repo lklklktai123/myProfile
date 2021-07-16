@@ -128,13 +128,15 @@
     [center-end] minmax(6rem, 1fr)
     [full-end];
   grid-template-rows: 100vh;
-
   &__btn-left {
     grid-column: full-start / center-start;
     grid-row: 1/2;
     align-self: center;
     justify-self: center;
     z-index: 100;
+    @include respond(tab-port) {
+      background-color: $color-white;
+    }
 
     & svg {
       font-size: 4rem;
@@ -144,6 +146,9 @@
       &:hover {
         transform: translateY(-0.5rem);
       }
+      @include respond(tab-port) {
+        color: $color-black-1;
+      }
     }
   }
   &__btn-right {
@@ -152,6 +157,9 @@
     align-self: center;
     justify-self: center;
     z-index: 100;
+    @include respond(tab-port) {
+      background-color: $color-white;
+    }
 
     & svg {
       font-size: 4rem;
@@ -160,6 +168,9 @@
       color: $color-white;
       &:hover {
         transform: translateY(-0.5rem);
+      }
+      @include respond(tab-port) {
+        color: $color-black-1;
       }
     }
   }

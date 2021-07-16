@@ -47,7 +47,7 @@ const CourseDetail = () => {
     slider.classList.remove('hidden');
     courseDetailView.classList.add('hidden');
     overlay.classList.add('hidden');
-    console.log(slider);
+    // console.log(slider);
     goToSlide(e.target.dataset.position);
   };
   const closeSLider = () => {

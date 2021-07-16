@@ -11,6 +11,7 @@ const Header = props => {
   const navBar = document.querySelector('.navigation__nav-bar');
   const menuHome = document.querySelector('#menu-home');
   const childBar = navBar ? navBar.childNodes : null;
+  const about = document.querySelector('.about');
   if (!inView) {
     navigation.classList.remove('hidden');
     if (childBar)
@@ -19,7 +20,9 @@ const Header = props => {
   } else {
     navigation.classList.add('hidden');
   }
-
+  const detailsHandler = () => {
+    if (about) about.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <header className="header" id="home" ref={ref}>
       <div className="header__container">
@@ -34,7 +37,9 @@ const Header = props => {
           <Icons />
         </div>
 
-        <button className="btn-detail move-in-top">{t('Detail')}</button>
+        <button className="btn-detail move-in-top" onClick={detailsHandler}>
+          {t('Detail')}
+        </button>
       </div>
     </header>
   );
