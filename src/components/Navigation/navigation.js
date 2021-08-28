@@ -1,8 +1,10 @@
+import { useRef } from 'react';
 import Logo from './Logo/Logo';
 import Menu from './Menus/Menus';
-const Navigation = () => {
+const Navigation = props => {
+  const navigationRef = useRef();
   return (
-    <div className="navigation hidden">
+    <div className="navigation hidden" ref={navigationRef}>
       <Logo />
       <Menu />
     </div>

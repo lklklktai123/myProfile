@@ -1,7 +1,7 @@
-export const ScrollToHandler = e => {
+export const ScrollToHandler = (e, ref) => {
   e.preventDefault();
   // console.log(e.target.getAttribute('href'));
-  const idSection = document.querySelector(e.target.getAttribute('href'));
+  const idSection = document.querySelector(ref);
   // idSection.getBoundingClientRect();
   // Scrolling
   // window.scrollTo({

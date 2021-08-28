@@ -4,9 +4,12 @@ export const CourseContext = React.createContext({
   dataCourses: '',
   setCurrentCourse: value => {},
   currentCourse: 1,
+  courseDetailIsShow: false,
+  courseDetailToggle: () => {},
 });
 export const CourseContextProvider = props => {
   const [idDetailCourse, setIdDetailCourse] = useState(1);
+  const [courseDetailShow, setCourseDetailShow] = useState(false);
   const dataCourses = [
     {
       image: 1,
@@ -73,12 +76,19 @@ export const CourseContextProvider = props => {
   const setIdCourseHandler = value => {
     setIdDetailCourse(value);
   };
+  const toggleShowHandler = () => {
+    setCourseDetailShow(prevState => {
+      return !prevState;
+    });
+  };
   return (
     <CourseContext.Provider
       value={{
         dataCourses: dataCourses,
         setCurrentCourse: setIdCourseHandler,
         currentCourse: idDetailCourse,
+        courseDetailIsShow: courseDetailShow,
+        courseDetailToggle: toggleShowHandler,
       }}
     >
       {props.children}

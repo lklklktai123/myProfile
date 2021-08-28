@@ -7,24 +7,23 @@ import Experience from './components/Experience/experience';
 import Footer from './components/Footer/footer';
 import Header from './components/Header/header';
 import Parallax from './components/Parallax/parallax';
-import Overlay from './components/Overlay/overlay';
 import Navigation from './components/Navigation/navigation';
 import ModeMobile from './components/Navigation/ModeMobile/ModeMobile';
-import Modal from './components/Overlay/Modal/modal';
 import { CourseContextProvider } from './Context/CourseContext';
 import LangSelector from './components/Translate/LangSelector';
+import useWindowDimensions from './hooks/useWindowDimensions';
 
 const App = () => {
+  const { width } = useWindowDimensions();
+
   return (
     <React.Fragment>
-      <Overlay />
-      <Modal />
-      <Navigation />
-      <ModeMobile />
+      {width >= 900 && <Navigation />}
+      {width < 900 && <ModeMobile />}
       <LangSelector />
 
       <div className="container">
-        <Header />
+        <Header width={width} />
         <About />
         <Parallax />
         <Experience />

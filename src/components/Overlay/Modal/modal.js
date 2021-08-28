@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import { FaWindowClose, FaCheck, FaTimes } from 'react-icons/fa';
 import { ErrorContext } from '../../../Context/error-context';
-import { closeModal } from '../../../shared/utilities/helper';
-const Modal = () => {
+const Modal = props => {
   const errorCtx = useContext(ErrorContext);
   let modal = (
-    <div className="modal hidden">
-      <FaWindowClose className="modal__btn" onClick={closeModal} />
+    <div className="modal">
+      <FaWindowClose className="modal__btn" onClick={props.closeModal} />
       <div className="modal__block success">
         <FaCheck className="modal__icon" />
       </div>
@@ -18,7 +17,7 @@ const Modal = () => {
   if (errorCtx.error)
     modal = (
       <div className="modal">
-        <FaWindowClose className="modal__btn" onClick={closeModal} />
+        <FaWindowClose className="modal__btn" onClick={props.closeModal} />
         <div className="modal__block error">
           <FaTimes className="modal__icon" />
         </div>

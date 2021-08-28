@@ -15,7 +15,6 @@ import {
 import React from 'react';
 const About = props => {
   const errorCtx = useContext(ErrorContext);
-  console.log(errorCtx.isVn);
   const { ref, inView, entry } = useInView(threshold(0.4));
   const { t } = useTranslation();
   let url = errorCtx.isVn

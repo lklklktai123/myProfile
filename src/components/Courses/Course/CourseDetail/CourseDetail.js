@@ -5,9 +5,13 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import React, { useContext } from 'react';
 import { FaWindowClose } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
+import { useRef } from 'react';
 const CourseDetail = () => {
   const { t } = useTranslation();
   const courseCtx = useContext(CourseContext);
+  const sliderImageRef = useRef();
+  const sliderRef = useRef();
+  const courseDetailRef = useRef();
 
   const [dataCouseDetail] = courseCtx.dataCourses.filter(
     course => course.courseDetail.id === courseCtx.currentCourse
@@ -17,7 +21,7 @@ const CourseDetail = () => {
   let maxSlide = null;
 
   const goToSlide = function (slide) {
-    const slides = document.querySelectorAll('.slider_main-img');
+    const slides = sliderImageRef.current.childNodes;
     maxSlide = slides.length;
     slides.forEach(
       (s, i) => (s.style.transform = `translateX(${150 * (i - slide)}%)`)
@@ -41,27 +45,17 @@ const CourseDetail = () => {
     goToSlide(curSlide);
   };
   const showSLider = e => {
-    const courseDetailView = document.querySelector('.course-detail');
-    const overlay = document.querySelector('.overlay');
-    const slider = document.querySelector('.slider');
-    slider.classList.remove('hidden');
-    courseDetailView.classList.add('hidden');
-    overlay.classList.add('hidden');
-    // console.log(slider);
+    sliderRef.current.classList.remove('hidden');
+    courseDetailRef.current.classList.add('hidden');
     goToSlide(e.target.dataset.position);
   };
   const closeSLider = () => {
-    const slider = document.querySelector('.slider');
-    const courseDetailView = document.querySelector('.course-detail');
-    const overlay = document.querySelector('.overlay');
-    slider.classList.add('hidden');
-    courseDetailView.classList.remove('hidden');
-    overlay.classList.remove('hidden');
+    sliderRef.current.classList.add('hidden');
+    courseDetailRef.current.classList.remove('hidden');
   };
   return (
     <React.Fragment>
-      {/* <Overlay /> */}
-      <div className="course-detail hidden">
+      <div className="course-detail" ref={courseDetailRef}>
         <div className="course-detail__title">{t('Course')}</div>
         <div className="course-detail__left">
           <div className="course-detail__left-block">
@@ -99,12 +93,12 @@ const CourseDetail = () => {
           ))}
         </div>
       </div>
-      <div className="slider hidden">
+      <div className="slider hidden" ref={sliderRef}>
         <FaWindowClose className="slider__btn-close" onClick={closeSLider} />
         <div className="slider__btn-left">
           <FaArrowAltCircleLeft onClick={prevSlide} />
         </div>
-        <div className="slider__main">
+        <div className="slider__main" ref={sliderImageRef}>
           {dataCouseDetail.courseDetail.images.map((image, index) => (
             <img
               key={`img-couse-${index}`}

@@ -2,6 +2,7 @@ import MenuMobile from './MenuMobile/menuMobile';
 import React, { useContext } from 'react';
 import IconMenu from './MenuMobile/IconMenu/iconMenu';
 import { ErrorContext } from '../../../Context/error-context';
+import { dataMenu } from '../../../shared/utilities/config';
 
 const ModeMobile = () => {
   const errorCtx = useContext(ErrorContext);
@@ -17,7 +18,19 @@ const ModeMobile = () => {
         check={errorCtx.statusIcon}
         clicked={() => errorCtx.toggleIcon(!errorCtx.statusIcon)}
       />
-      <MenuMobile />
+      <nav className="mode-mobile__nav">
+        <ul className="mode-mobile__list">
+          {dataMenu.map((menu, index) => (
+            <MenuMobile
+              link={menu.link}
+              idMenu={menu.idMenu}
+              name={menu.name}
+              key={`menu${index}`}
+              index={index}
+            />
+          ))}
+        </ul>
+      </nav>
     </div>
   );
 };
