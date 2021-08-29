@@ -13,6 +13,7 @@ const Form = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const errCtx = useContext(ErrorContext);
+  const [isShow, setIsShow] = useState(false);
 
   const onchange = value => {
     console.log('Captcha value:', value);
@@ -25,19 +26,21 @@ const Form = () => {
       .then(
         result => {
           errCtx.onError(false);
+          setIsShow(true);
         },
         error => {
           errCtx.onError(true);
+          setIsShow(true);
           console.log(error.text);
         }
       );
   };
   const closeModalHandler = () => {
-    errCtx.onError(false);
+    setIsShow(false);
   };
   return (
     <>
-      {errCtx.error && (
+      {isShow && (
         <Fragment>
           <Overlay closeModal={closeModalHandler}></Overlay>
           <Modal closeModal={closeModalHandler} />
