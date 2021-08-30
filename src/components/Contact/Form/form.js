@@ -12,6 +12,7 @@ const Form = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const errCtx = useContext(ErrorContext);
   const [isShow, setIsShow] = useState(false);
 
@@ -20,17 +21,24 @@ const Form = () => {
   };
   const sendEmail = e => {
     e.preventDefault();
-
+    setIsLoading(true);
     emailjs
       .sendForm(config.SERVICE_ID, config.TEMPLATE_ID, e.target, config.USER_ID)
       .then(
         result => {
           errCtx.onError(false);
           setIsShow(true);
+          setName('');
+          setEmail('');
+          setSubject('');
+          setMessage('');
+          setIsLoading(false);
+          window.location.reload();
         },
         error => {
           errCtx.onError(true);
           setIsShow(true);
+          setIsLoading(false);
           console.log(error.text);
         }
       );
@@ -95,6 +103,7 @@ const Form = () => {
           onChange={onchange}
           size="normal"
         />
+        {isLoading && <p>Loading ...</p>}
         <button type="submit" className="btn-submit">
           {t('Submit')}
         </button>
