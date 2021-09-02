@@ -33,7 +33,6 @@ const Form = () => {
           setSubject('');
           setMessage('');
           setIsLoading(false);
-          window.location.reload();
         },
         error => {
           errCtx.onError(true);
