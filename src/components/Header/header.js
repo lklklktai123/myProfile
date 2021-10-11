@@ -14,7 +14,7 @@ const Header = props => {
   const about = document.querySelector('.about');
   if (props.width >= 900) {
     if (!inView) {
-      navigation.classList.remove('hidden');
+      if (navigation) navigation.classList.remove('hidden');
       if (childBar)
         childBar.forEach(menu => menu.classList.remove('border-bottom'));
       if (menuHome) menuHome.classList.add('border-bottom');
